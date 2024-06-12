@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IST Pro 2024</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald');
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding: 0 2rem;
+            text-align: center;
+            font: 14pt Oswald;
+        }
+        
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        p {
+            margin: 2rem auto;
+            color: hsl(0, 0%, 50%);
+            font-size: 1.5rem;
+        }
+        
+        main a {
+            display: block;
+            aspect-ratio: 760 / 250;
+            color: white;
+            position: relative;
+            background-size: cover;
+        }
+        
+        main a h2 {
+            color: white;
+            text-align: left;
+            font-size: 1.5rem;
+            font-weight: normal;
+            background-color: hsla(0, 0%, 00%, 0.4);
+        
+            margin: 0;
+            padding: 0.25rem;
+            width: 100%;
+            
+            position: absolute;
+            bottom: 0;
+        }
+        
+        footer {
+            margin: 2rem auto;
+            color: hsl(0, 0%, 50%);
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>IST Pro 2024: Issues in Technology</h1>
+    <hr>
+    <p>Technology advances at a rapid pace. But with every innovation that helps, educates or entertains us in new or better ways than before comes a set of questions about legal, social or ethical issues that we must consider.</p>
+
+    <main id="articles">
+
+    
+    </main>
+
+    <footer>Written by the intelligent, thoughtful and ethical students of IST, class of 2024.</footer>
+
+    <script>
+        articles = [
+            ['artificial-intelligence-selection', 'Selection algorithms'],
+            ['gps', 'GPS'],
+            ['issues-of-chat-gpt', 'Chat GPT'],
+            ['voice-cloning', 'Voice Cloning'],
+            ['nanotechnology', 'Nanotechnology'],
+            ['biometrics', 'Biometrics'],
+            ['augmented-reality', 'Augmented Reality'],
+            ['ai-in-healthcare', 'AI in Healthcare'],
+            ['photo-manipulation', 'Photo manipulation'],
+            ['robotic-surgery', 'Robotic surgery'],
+            ['political-ai', 'Political AI'],
+            ['facial-recognition', 'Facial Recognition'],
+            ['networks-make-the-net-work', 'Internet equality'],
+            ['ins-and-outs-of-drone-usage', 'Drones'],
+            ['ai-in-education', 'AI in Education'],
+            ['self-driving-cars', 'Self-driving cars'],
+            ['surveillance-technology', 'Surveillance Technology'],
+            ['spacecraft', 'Spacecraft'],
+            ['generative-ai', 'Generative AI'],
+            ['cryptocurrency', 'Cryptocurrency'],
+            ['online-banking', 'Online Banking'],
+            ['virtual-reality', 'Virtual Reality'],
+            ['facial-recognition-tech', 'Facial Recognition Technology'],
+            ['social-media-algorithms', 'Social Media Algorithms'],
+        ];
+
+
+        // Shuffle the article order
+        for (let index = articles.length - 1; index > 0; index--) {
+            let randomIndex = Math.floor(Math.random() * (index + 1));
+            let temp = articles[index];
+            articles[index] = articles[randomIndex];
+            articles[randomIndex] = temp;
+        }
+
+
+        // Display all articles and their hero image as a preview
+        let articlesContainer = document.querySelector('#articles');
+        for (let articleData of articles) {  
+            // Heading
+            let articleHeading = document.createElement('h2');
+            articleHeading.innerText = articleData[1];
+
+            // Article link
+            let newArticle = document.createElement('a');
+            newArticle.setAttribute('href', articleData[0]);
+            newArticle.style.backgroundImage = `url(${articleData[0]}/hero.png)`;
+
+            // Add to page
+            newArticle.appendChild(articleHeading);
+            articlesContainer.appendChild(newArticle);
+        }
+
+    </script>
+</body>
+</html>
